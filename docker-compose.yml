@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  php:
+    build: .
+    container_name: php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./php:/var/www/html
+      - ./logs:/var/log/apache2
